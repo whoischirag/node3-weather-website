@@ -5,6 +5,8 @@ const search = document.querySelector("input");
 const message= document.querySelector('#message1')
 const message2= document.querySelector('#message2')
 const message3= document.querySelector('#message3')
+const message4=document.querySelector('#message4')
+
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,11 +19,13 @@ weatherForm.addEventListener("submit", (e) => {
         message.textContent=data.error
         message2.textContent=''
         message3.textContent=''
+        message4.textContent=''
       } else {
        
         message.textContent= 'Location:'+data.location
         message2.textContent='Country: '+data.country 
         message3.textContent='Forecast: '+data.forecast
+        message4.textContent='Humidity: '+data.humidity 
     }
     });
   });

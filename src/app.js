@@ -45,7 +45,7 @@ app.get("/weather", (req, res) => {
     return res.send({ error: "You must Provide an Address" });
   }
 
-  forecast(req.query.address, (error, { country, temp, feels_like }={}) => {
+  forecast(req.query.address, (error, { country, temp, feels_like,humidity }={}) => {
     if (error) {
       return res.send({ error });
     }
@@ -53,7 +53,8 @@ app.get("/weather", (req, res) => {
     res.send({
       location:req.query.address,
       country,
-      forecast: temp +feels_like
+      forecast: temp +feels_like,
+      humidity
       // forecast:'it is snowing',
       // location:req.query.address
     });

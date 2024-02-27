@@ -15,7 +15,8 @@ const forecast = (address, callback) => {
       callback(undefined, {
         country: body.sys.country,
         temp: "It is currently " + body.main.temp + " Degrees out",
-        feels_like: ". It feels like " + body.main.feels_like + " Degrees out",
+        feels_like: ". It feels like " + body.main.feels_like + " Degrees out.",
+        humidity:'The Humidity is  '+body.main.humidity+'%.'
       });
     } else {
       callback("Unable to Find the location. Try another Search!", undefined);
